@@ -15,6 +15,7 @@
 	
 	flake.nixosModules.nixnix = {config, pkgs, ...}:
 	{
+		networking.hostName = "nixnix";
 		nix.settings.experimental-features = ["nix-command" "flakes"];
 		imports = [
 			inputs.home-manager.nixosModules.home-manager
