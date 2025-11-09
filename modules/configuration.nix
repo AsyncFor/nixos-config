@@ -2,7 +2,8 @@
 {
 	flake.nixosConfigurations.nixnix = inputs.nixpkgs.lib.nixosSystem {
 		modules = [
-			../hardware-configuration.nix
+			self.nixosModules.hardware
+			
 			inputs.stylix.nixosModules.stylix
 			self.nixosModules.nixnix
 			self.nixosModules.locale
