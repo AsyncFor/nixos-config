@@ -2,15 +2,15 @@
 {
 	flake.nixosConfigurations.nixnix = inputs.nixpkgs.lib.nixosSystem {
 		modules = [
-			self.nixosModules.hardware
-			
 			inputs.stylix.nixosModules.stylix
+			self.nixosModules.hardware
 			self.nixosModules.nixnix
 			self.nixosModules.locale
 			self.nixosModules.nvidia
 			self.nixosModules.hyprland
 			self.nixosModules.home-manager
 			self.nixosModules.stylix
+			self.nixosModules.mullvad
 		];
 	};
 	
@@ -21,7 +21,8 @@
 		imports = [
 			inputs.home-manager.nixosModules.home-manager
 		];
-	
+		
+			
 		# boot loader
 		boot.loader.systemd-boot.enable = true;
 		boot.loader.efi.canTouchEfiVariables = true;
@@ -37,6 +38,7 @@
 			git
 			curl
 		];
+		
 	
 		users.users.frog = {
 			isNormalUser = true;
@@ -44,6 +46,15 @@
 			packages = with pkgs; [];
 		};
 		
+		# required for mullvad	
+		networking.nameservers=["1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one"];
+		services.resolved = {
+			enable = true;
+			dnssec = "true";
+			domains = ["~."];
+			fallbackDns=["1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one"];
+			dnsovertls = "true";
+		};
 		networking.networkmanager.enable = true;	
 	};
 }

@@ -14,7 +14,7 @@
 			xfce.thunar
 			nerd-fonts.fira-code
 			nerd-fonts.droid-sans-mono
-			nerd-fonts.symbols-only  #This one
+			nerd-fonts.symbols-only
 		];
 	};
 }
