@@ -6,7 +6,10 @@
 			enable = true;
 			xwayland.enable = true;
 			settings = {
-				env = "HYPRCURSOR_THEME,rose-pine-hyprcursor";
+				env = [
+				"HYPRCURSOR_THEME,rose-pine-hyprcursor"
+				"HYPRCURSOR_SIZE, 30"
+				];
 				general = {
 					layout = "master";
 				};
