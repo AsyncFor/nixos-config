@@ -6,6 +6,9 @@
 
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
+    
+    hyprland.url = "github:hyprwm/Hyprland?shallow=1";
+
     home-manager = {
        url="github:nix-community/home-manager";
        inputs.nixpkgs.follows="nixpkgs";
@@ -18,6 +21,13 @@
     tt-schemes = {
       url = "github:tinted-theming/schemes?shallow=1";
       flake = false;
+    };
+
+    
+    rose-pine-hyprcursor = {
+      url = "github:ndom91/rose-pine-hyprcursor";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.hyprlang.follows = "hyprland/hyprlang";
     };
 
   };

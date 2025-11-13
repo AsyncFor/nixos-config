@@ -32,11 +32,12 @@
 		
 	
 		nixpkgs.config.allowUnfree = true;
-		environment.systemPackages = with pkgs; [
-			vim
-			wget
-			git
-			curl
+		environment.systemPackages = [
+			pkgs.vim
+			pkgs.wget
+			pkgs.git
+			pkgs.curl
+			inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
 		];
 		
 		programs.fish.enable = true;
