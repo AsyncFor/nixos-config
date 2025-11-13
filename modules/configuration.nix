@@ -39,7 +39,8 @@
 			curl
 		];
 		
-		programs.fish.enable = true;	
+		programs.fish.enable = true;
+		programs.fish.interactiveShellInit = "set fish_greeting";
 	
 		users.users.frog = {
 			isNormalUser = true;

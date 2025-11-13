@@ -15,5 +15,11 @@
 		programs.fish.enable = true;
 		programs.ghostty.enable = true;
 		programs.ghostty.enableFishIntegration = true;
+
+		programs.neovim = {
+		  enable = true;
+		  viAlias = true;
+		  vimAlias = true;
+		};
 	};
 }
