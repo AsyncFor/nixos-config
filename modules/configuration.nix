@@ -39,11 +39,13 @@
 			curl
 		];
 		
+		programs.fish.enable = true;	
 	
 		users.users.frog = {
 			isNormalUser = true;
 			extraGroups = ["networkmanager" "wheel"];
 			packages = with pkgs; [];
+			shell = pkgs.fish;
 		};
 		
 		# required for mullvad	
@@ -55,6 +57,7 @@
 			fallbackDns=["1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one"];
 			dnsovertls = "true";
 		};
-		networking.networkmanager.enable = true;	
+		networking.networkmanager.enable = true;
+		
 	};
 }

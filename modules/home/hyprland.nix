@@ -19,7 +19,7 @@
 					"$mod, $mod_L, exec, pkill rofi || rofi -show drun"
 					
 					# keybinds
-					"$mod, Return, exec, kitty"
+					"$mod, Return, exec, ghostty"
 					"$mod, Q, killactive"
 					"$mod, M, exit"
 					"$mod, F, fullscreen"

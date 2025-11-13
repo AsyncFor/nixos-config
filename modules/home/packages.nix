@@ -3,8 +3,10 @@
 	flake.homeModules.packages = {config, pkgs, ...}:
 	{
 		home.packages = with pkgs; [
-			ghostty
 			kitty
+			neovim
+			st
+			hyprcursor
 			rofi
 			firefox
 			dunst
@@ -16,6 +18,7 @@
 			nerd-fonts.droid-sans-mono
 			nerd-fonts.symbols-only
 			prismlauncher
+			spotify
 		];
 	};
 }
