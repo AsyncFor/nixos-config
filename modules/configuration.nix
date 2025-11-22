@@ -3,6 +3,7 @@
 	flake.nixosConfigurations.nixnix = inputs.nixpkgs.lib.nixosSystem {
 		modules = [
 			inputs.stylix.nixosModules.stylix
+			inputs.lanzaboote.nixosModules.lanzaboote
 			self.nixosModules.hardware
 			self.nixosModules.nixnix
 			self.nixosModules.locale
@@ -22,9 +23,13 @@
 			inputs.home-manager.nixosModules.home-manager
 		];
 		
-			
+
+            	boot.lanzaboote = {
+              		enable = true;
+              		pkiBundle = "/var/lib/sbctl";
+            	};
 		# boot loader
-		boot.loader.systemd-boot.enable = true;
+		boot.loader.systemd-boot.enable = false;
 		boot.loader.efi.canTouchEfiVariables = true;
 		
 		# state version
@@ -37,6 +42,7 @@
 			pkgs.wget
 			pkgs.git
 			pkgs.curl
+			pkgs.sbctl
 			inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
 		];
 		

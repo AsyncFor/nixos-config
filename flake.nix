@@ -30,6 +30,11 @@
       inputs.hyprlang.follows = "hyprland/hyprlang";
     };
 
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.3";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = 
