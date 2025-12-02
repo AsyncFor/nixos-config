@@ -3,6 +3,7 @@
 	flake.homeModules.packages = {config, pkgs, ...}:
 	{
 		home.packages = with pkgs; [
+			wl-clipboard
 			kitty
 			st
 			hyprcursor
