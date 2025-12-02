@@ -13,6 +13,7 @@
 			self.nixosModules.home-manager
 			self.nixosModules.stylix
 			self.nixosModules.mullvad
+			self.nixosModules.cachix
 		];
 	};
 	
