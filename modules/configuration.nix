@@ -4,6 +4,7 @@
 		modules = [
 			inputs.stylix.nixosModules.stylix
 			inputs.lanzaboote.nixosModules.lanzaboote
+			inputs.nix-index-database.nixosModules.nix-index
 			self.nixosModules.hardware
 			self.nixosModules.nixnix
 			self.nixosModules.locale
@@ -38,7 +39,6 @@
 	
 		nixpkgs.config.allowUnfree = true;
 		environment.systemPackages = [
-			pkgs.comma
 			pkgs.vim
 			pkgs.wget
 			pkgs.git
@@ -49,7 +49,8 @@
 		
 		programs.fish.enable = true;
 		programs.fish.interactiveShellInit = "set fish_greeting";
-	
+		programs.nix-index-database.comma.enable = true;
+
 		users.users.frog = {
 			isNormalUser = true;
 			extraGroups = ["networkmanager" "wheel"];
