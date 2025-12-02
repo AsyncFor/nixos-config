@@ -35,7 +35,7 @@
 		boot.loader.efi.canTouchEfiVariables = true;
 		
 		# state version
-		system.stateVersion = "25.05";
+		system.stateVersion = "25.11";
 		
 	
 		nixpkgs.config.allowUnfree = true;

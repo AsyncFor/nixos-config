@@ -5,6 +5,7 @@
 		imports = [
 			self.homeModules.packages
 			self.homeModules.hyprland
+			self.homeModules.nixvim
 		];
 		stylix.targets.rofi.enable = true;
 		stylix.targets.kitty.enable = true;
@@ -15,11 +16,5 @@
 		programs.fish.enable = true;
 		programs.ghostty.enable = true;
 		programs.ghostty.enableFishIntegration = true;
-
-		programs.neovim = {
-		  enable = true;
-		  viAlias = true;
-		  vimAlias = true;
-		};
 	};
 }
