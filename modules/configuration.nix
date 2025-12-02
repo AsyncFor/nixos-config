@@ -38,6 +38,7 @@
 	
 		nixpkgs.config.allowUnfree = true;
 		environment.systemPackages = [
+			pkgs.comma
 			pkgs.vim
 			pkgs.wget
 			pkgs.git
