@@ -10,7 +10,7 @@
 			hyprcursor
 			
 			# Application launcher and notifications
-			rofi-wayland
+			rofi
 			dunst
 			libnotify
 			
