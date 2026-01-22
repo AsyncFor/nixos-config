@@ -17,7 +17,7 @@
 		# User settings
 		home.username = "frog";
 		home.homeDirectory = "/home/frog";
-		home.stateVersion = "25.11";
+		home.stateVersion = "24.11";
 		
 		# Font configuration
 		fonts.fontconfig.enable = true;

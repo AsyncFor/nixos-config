@@ -20,7 +20,7 @@
 			
 			# File management
 			xfce.thunar
-			gvfs  # For thunar mounting capabilities
+			gvfs
 			unzip
 			p7zip
 			
@@ -54,32 +54,18 @@
 			nerd-fonts.symbols-only
 			font-awesome
 			
-			# C/C++ Development Environment
-			clang
-			clang-tools  # clangd, clang-format, etc.
-			lldb
-			gdb
+			# Development tools (non-conflicting)
+			# Use nix-shell or devShells for compiler toolchains to avoid conflicts
 			cmake
 			gnumake
 			ninja
-			meson
-			pkg-config
-			autoconf
-			automake
-			libtool
-			
-			# Build and debugging tools
+			gdb
 			valgrind
 			strace
-			ltrace
-			binutils
-			
-			# Libraries (common development headers)
-			glibc.dev
 			
 			# Version control
 			git
-			gh  # GitHub CLI
+			gh
 			
 			# Code analysis
 			cppcheck
@@ -97,7 +83,7 @@
 			curl
 			wget
 			
-			# Waybar dependencies
+			# Waybar
 			waybar
 		];
 	};
