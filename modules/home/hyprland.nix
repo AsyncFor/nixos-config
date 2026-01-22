@@ -138,8 +138,12 @@
 				# Monitor configuration - explicitly set 144Hz for all monitors
 				# Format: monitor = name, resolution@refresh, position, scale
 				# Use "highrr" to prefer highest refresh rate available
+				# Second monitor positioned on the left (negative X position)
 				monitor = [
-					", highrr, auto, 1"  # Fallback for any monitor
+					"DP-1, highrr, 1920x0, 1"   # Primary monitor (right)
+					"DP-2, highrr, 0x0, 1"      # Second monitor (left)
+					"HDMI-A-1, highrr, 0x0, 1"  # Alternative: second monitor via HDMI (left)
+					", highrr, auto, 1"         # Fallback for any other monitor
 				];
 
 				# Window rules for gaming
