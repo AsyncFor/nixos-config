@@ -45,16 +45,63 @@
 			pkgs.git
 			pkgs.curl
 			pkgs.sbctl
+			pkgs.pciutils
+			pkgs.usbutils
+			pkgs.lshw
+			pkgs.file
+			pkgs.tree
 			inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
 		];
 		
 		programs.fish.enable = true;
 		programs.fish.interactiveShellInit = "set fish_greeting";
 		programs.nix-index-database.comma.enable = true;
+		
+		# Enable dconf for GTK settings
+		programs.dconf.enable = true;
+		
+		# Pipewire for audio (better for gaming)
+		security.rtkit.enable = true;
+		services.pipewire = {
+			enable = true;
+			alsa.enable = true;
+			alsa.support32Bit = true;
+			pulse.enable = true;
+			jack.enable = true;
+			wireplumber.enable = true;
+		};
+		
+		# XDG portal for screen sharing and file dialogs
+		xdg.portal = {
+			enable = true;
+			extraPortals = [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk ];
+		};
+		
+		# Polkit for authentication dialogs
+		security.polkit.enable = true;
+		systemd.user.services.polkit-gnome-authentication-agent-1 = {
+			description = "polkit-gnome-authentication-agent-1";
+			wantedBy = [ "graphical-session.target" ];
+			wants = [ "graphical-session.target" ];
+			after = [ "graphical-session.target" ];
+			serviceConfig = {
+				Type = "simple";
+				ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+				Restart = "on-failure";
+				RestartSec = 1;
+				TimeoutStopSec = 10;
+			};
+		};
+		
+		# Enable GVFS for thunar mounting
+		services.gvfs.enable = true;
+		
+		# Enable thumbnails in thunar
+		services.tumbler.enable = true;
 
 		users.users.frog = {
 			isNormalUser = true;
-			extraGroups = ["networkmanager" "wheel"];
+			extraGroups = ["networkmanager" "wheel" "video" "audio" "input" "gamemode"];
 			packages = with pkgs; [];
 			shell = pkgs.fish;
 		};
