@@ -97,7 +97,7 @@
           # Checks for CI and `nix flake check`
           checks = {
             formatting = pkgs.runCommand "check-formatting" { } ''
-              ${pkgs.nixfmt-rfc-style}/bin/nixfmt --check ${./.}/*.nix ${./.}/modules/*.nix ${./.}/modules/home/*.nix
+              ${pkgs.findutils}/bin/find ${./.} -name '*.nix' -exec ${pkgs.nixfmt-rfc-style}/bin/nixfmt --check {} +
               touch $out
             '';
 
