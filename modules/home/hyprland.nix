@@ -142,7 +142,7 @@
 				monitor = [
 					"DP-1, highrr, 1920x0, 1"   # Primary monitor (right)
 					"DP-2, highrr, 0x0, 1"      # Second monitor (left)
-					"HDMI-A-1, highrr, 0x0, 1"  # Alternative: second monitor via HDMI (left)
+					"HDMI-A-2, highrr, 0x0, 1"  # Alternative: second monitor via HDMI (left)
 					", highrr, auto, 1"         # Fallback for any other monitor
 				];
 
