@@ -1,1 +1,17 @@
+# Backup files
 *.bak
+*.backup
+
+# Nix build artifacts
+result
+result-*
+
+# Direnv
+.direnv/
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
