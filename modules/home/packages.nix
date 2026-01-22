@@ -55,7 +55,6 @@
 			font-awesome
 			
 			# C/C++ Development Environment
-			gcc
 			clang
 			clang-tools  # clangd, clang-format, etc.
 			lldb
