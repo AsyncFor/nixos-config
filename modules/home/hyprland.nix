@@ -164,6 +164,7 @@ _: {
           spacing = 4;
           modules-left = [
             "hyprland/workspaces"
+            "hyprland/mode"
             "hyprland/window"
           ];
           modules-center = [ "clock" ];
