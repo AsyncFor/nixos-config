@@ -1,7 +1,7 @@
 { self, ... }:
 {
   flake.nixosModules.home-manager =
-    { ... }:
+    _:
     {
       home-manager = {
         useGlobalPkgs = true;

@@ -1,7 +1,12 @@
-{ ... }:
+_:
 {
   flake.nixosModules.hardware =
-    { config, lib, modulesPath, ... }:
+    {
+      config,
+      lib,
+      modulesPath,
+      ...
+    }:
     {
       imports = [
         (modulesPath + "/installer/scan/not-detected.nix")
@@ -25,7 +30,8 @@
         options = [ "subvol=@" ];
       };
 
-      boot.initrd.luks.devices."luks-cd33a03a-a097-4096-bbba-9bb8b6714e1d".device = "/dev/disk/by-uuid/cd33a03a-a097-4096-bbba-9bb8b6714e1d";
+      boot.initrd.luks.devices."luks-cd33a03a-a097-4096-bbba-9bb8b6714e1d".device =
+        "/dev/disk/by-uuid/cd33a03a-a097-4096-bbba-9bb8b6714e1d";
 
       fileSystems."/boot" = {
         device = "/dev/disk/by-uuid/B378-732D";

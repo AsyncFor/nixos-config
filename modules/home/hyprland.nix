@@ -1,7 +1,7 @@
-{ ... }:
+_:
 {
   flake.homeModules.hyprland =
-    { pkgs, ... }:
+    _:
     {
       wayland.windowManager.hyprland = {
         enable = true;

@@ -49,7 +49,11 @@
   };
 
   outputs =
-    inputs@{ flake-parts, import-tree, nixpkgs, ... }:
+    inputs@{
+      flake-parts,
+      import-tree,
+      ...
+    }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         inputs.home-manager.flakeModules.home-manager
@@ -59,7 +63,7 @@
       systems = [ "x86_64-linux" ];
 
       perSystem =
-        { pkgs, system, ... }:
+        { pkgs, ... }:
         {
           # Formatter for `nix fmt`
           formatter = pkgs.nixfmt-rfc-style;
@@ -70,6 +74,7 @@
             packages = with pkgs; [
               # Nix formatting
               nixfmt-rfc-style
+              nixfmt-tree
 
               # Nix linting
               statix # Static analysis for Nix
@@ -91,6 +96,7 @@
               echo "  statix check   - Run static analysis"
               echo "  deadnix        - Find unused code"
               echo "  nix flake check - Run all checks"
+              echo "  treefmt - Format tree"
             '';
           };
 

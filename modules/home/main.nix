@@ -1,7 +1,7 @@
 { self, ... }:
 {
   flake.homeModules.main =
-    { pkgs, ... }:
+    { ... }:
     {
       imports = [
         self.homeModules.packages
