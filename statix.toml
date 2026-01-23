@@ -1,0 +1,8 @@
+# statix configuration file
+# Disable certain lints that are stylistic preferences rather than errors
+
+disabled = [
+  # W20: repeated_keys - Using repeated keys is a valid style in Nix
+  # Some prefer `foo.bar = x; foo.baz = y;` over nested attribute sets
+  "repeated_keys"
+]
