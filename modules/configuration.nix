@@ -10,6 +10,7 @@
       self.nixosModules.locale
       self.nixosModules.nvidia
       self.nixosModules.hyprland
+      self.nixosModules.greetd
       self.nixosModules.home-manager
       self.nixosModules.stylix
       self.nixosModules.mullvad
