@@ -78,6 +78,10 @@
         jack.enable = true;
         wireplumber.enable = true;
       };
+    
+      #bluetooth
+      hardware.bluetooth.enable = true;
+      services.blueman.enable = true;
 
       # XDG portal for screen sharing and file dialogs
       xdg.portal = {
