@@ -10,7 +10,7 @@
                     clients = [
                     {
                         type = "ollama";
-                        api_base = "http://localhost:11434";
+                        api_base = "http://127.0.0.1:11434";
                     }
                     ];
                     cmd_prelude = "Respond only with the command. No explanation unless asked.";

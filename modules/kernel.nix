@@ -4,6 +4,7 @@ _: {
     {
             boot.kernelPackages = pkgs.linuxPackages_latest;
             boot.kernelParams = [
+                "splash"
                 "slab_nomerge" 
                 "init_on_free=1" 
                 "page_alloc.shuffle=1" 
