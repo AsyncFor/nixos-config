@@ -32,7 +32,7 @@ _: {
       };
 
       # Disable CUDA support (not needed for gaming/dev)
-      nixpkgs.config.cudaSupport = false;
+      nixpkgs.config.cudaSupport = true;
 
       # Steam and gaming support
       programs.steam = {

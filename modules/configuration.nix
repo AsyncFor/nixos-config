@@ -15,6 +15,7 @@
       self.nixosModules.stylix
       self.nixosModules.mullvad
       self.nixosModules.cachix
+      self.nixosModules.ollama
     ];
   };
 
