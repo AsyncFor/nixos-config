@@ -6,7 +6,7 @@
             programs.aichat = {
                 enable = true;
                 settings = {
-                    model = "ollama:qwen2.5-coder:14b";
+                    model = "qwen2.5-coder:14b";
                     clients = [
                     {
                         type = "ollama";
