@@ -6,14 +6,19 @@
             programs.aichat = {
                 enable = true;
                 settings = {
-                    model = "qwen2.5-coder:14b";
+                    model = "ollama:qwen2.5-coder:14b";
                     clients = [
                     {
-                        type = "ollama";
-                        api_base = "http://127.0.0.1:11434";
+                        type= "openai-compatible";
+                        name = "ollama";
+                        api_base = "http://127.0.0.1:11434/v1";
+                        models = [
+                            { name = "qwen2.5-coder:14b"; }
+                            { name = "qwen2.5-coder:7b"; }
+                        ];
                     }
                     ];
-                    cmd_prelude = "Respond only with the command. No explanation unless asked.";
+                    cmd_prelude = "role:shell";
                 };
             };
 
