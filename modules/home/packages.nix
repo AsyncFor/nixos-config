@@ -26,6 +26,7 @@ _: {
 
         # Editors and IDEs
         zed-editor
+        obsidian
 
         # Screenshot and screen recording
         grimblast
